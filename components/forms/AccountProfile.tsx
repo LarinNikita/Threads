@@ -25,7 +25,7 @@ import { usePathname, useRouter } from "next/navigation";
 interface Props {
     user: {
         id: string;
-        objectld: string;
+        objectId: string;
         username: string;
         name: string;
         bio: string;
@@ -44,7 +44,7 @@ const AccountProfile = ({
     const router = useRouter();
     const pathname = usePathname();
 
-    const form = useForm({
+    const form = useForm<z.infer<typeof UserValidation>>({
         resolver: zodResolver(UserValidation),
         defaultValues: {
             profile_photo: user?.image || "",
@@ -215,7 +215,7 @@ const AccountProfile = ({
                 />
 
                 <Button type="submit" className="bg-primary-500">
-                    Submit
+                    {btnTitle}
                 </Button>
             </form>
         </Form>
