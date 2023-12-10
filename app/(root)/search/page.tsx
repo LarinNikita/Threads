@@ -1,9 +1,7 @@
-import UserCard from "@/components/cards/UserCard";
-import ProfileHeader from "@/components/shared/ProfileHeader";
-import { fetchUser, fetchUsers } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
-import Image from "next/image";
 import { redirect } from "next/navigation";
+import { fetchUser, fetchUsers } from "@/lib/actions/user.actions";
+import UserCard from "@/components/cards/UserCard";
 
 async function Page() {
     const user = await currentUser();
