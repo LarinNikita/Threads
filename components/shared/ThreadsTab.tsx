@@ -30,7 +30,7 @@ const ThreadsTab = async ({
                 <ThreadCard
                     key={thread._id}
                     id={thread._id}
-                    currentUser={currentUserId}
+                    currentUserId={currentUserId}
                     parentId={thread.parentId}
                     content={thread.text}
                     author={
