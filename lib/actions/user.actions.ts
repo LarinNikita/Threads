@@ -114,7 +114,7 @@ export async function fetchUsers({
         const regex = new RegExp(searchString, "i");
 
         const query: FilterQuery<typeof User> = {
-            id: { $ne: userId },
+            // id: { $ne: userId }
         };
 
         if (searchString.trim() !== "") {
